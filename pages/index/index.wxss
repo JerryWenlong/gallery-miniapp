@@ -1,0 +1,431 @@
+/**index.wxss**/
+
+.page {
+  width: 100%;
+  padding-top: 118rpx;
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 118rpx;
+  line-height: 118rpx;
+  padding: 0 60rpx;
+  font-size: 36rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.logo-box {
+  float: left;
+  margin-top: 18rpx;
+}
+
+.header-fixed .bth-list {
+  float: right;
+}
+
+.header-fixed .tap-item {
+  display: inline-block;
+  padding-left: 60rpx;
+  font-weight: 700;
+  color: #999;
+}
+
+.header-fixed .cur {
+  color: #000;
+}
+
+.qrcode-box {
+  width: 100%;
+  height: 230rpx;
+  padding: 0 60rpx;
+  margin-top: 60rpx;
+  box-sizing: border-box;
+}
+
+.record-box {
+  width: 100%;
+  height: 230rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+  box-shadow: 0px 14rpx 48rpx 0px rgba(239, 239, 239, 0.5);
+  border-radius: 12rpx;
+  border: 2rpx solid rgba(245, 245, 245, 1);
+  overflow: hidden;
+}
+
+.qrcode-box .top-box {
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 24rpx;
+  color: #999;
+  overflow: hidden;
+}
+
+.qrcode-box .top-box .more {
+  color: #000;
+}
+
+.qrcode-box .album-box {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 22rpx;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+  overflow: hidden;
+  position: relative;
+}
+
+.qrcode-box .album-box .show {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.qrcode-box .album-box .text {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #333;
+  padding-left: 130rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* 内容切换 box  */
+
+.content-box {
+  position: relative;
+  width: 100%;
+}
+
+.switch-box {
+  width: 100%;
+  overflow: hidden;
+}
+
+.title-box {
+  padding: 70rpx 80rpx 40rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  color: #333;
+  font-weight: 600;
+  font-size: 44rpx;
+}
+
+.title-box .more {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.swiper-box {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.switch-box swiper {
+  height: 456rpx;
+}
+
+.switch-box .slide-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.switch-box .img-box {
+  width: 100%;
+  height: 350rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+
+.content {
+  padding: 0 20rpx;
+  margin-top: 40rpx;
+  overflow: hidden;
+}
+
+.content .title {
+  width: 100%;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 36rpx;
+  color: #333;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* 热门活动  */
+
+.event-bth-list {
+  width: 100%;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #b4b4b4;
+  padding-left: 80rpx;
+  background-color: #fff;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.event-bth-list .event-shell {
+  height: 48rpx;
+  line-height: 34rpx;
+  padding: 10rpx 0 40rpx;
+  overflow: hidden;
+}
+
+.event-bth-list .tap-item {
+  display: inline-block;
+  height: 44rpx;
+  margin-right: 40rpx;
+}
+
+.event-bth-list .cur {
+  color: #ea111c;
+  border-bottom: 4rpx solid #ea111c;
+}
+
+.event-album-list {
+  width: 100%;
+  background-color: #fff;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.event-album-list .scroll-view-tap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.event-album-list .tap-item {
+  position: relative;
+  display: inline-block;
+  width: 240rpx;
+  height: 270rpx;
+  margin-right: 30rpx;
+  overflow: hidden;
+}
+
+.event-album-list .tap-item .text {
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.event-album-list .tap-item:first-child {
+  margin-left: 80rpx;
+}
+
+.event-album-list .show {
+  display: block;
+  width: 100%;
+  height: 180rpx;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.event-album-list .text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60rpx;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #333;
+  white-space: normal;
+}
+
+.check-more-list {
+  width: 100%;
+  padding: 0 80rpx;
+  margin-top: 60rpx;
+  box-sizing: border-box;
+}
+
+.check-more-list .bth {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 24rpx;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 46rpx;
+  border: 1px solid #f5f5f5;
+  box-shadow: 0rpx 14rpx 48rpx 0rpx rgba(239, 239, 239, 0.5);
+  overflow: hidden;
+}
+
+/* 直播  */
+
+.live-box-outside {
+  width: 100%;
+  padding-left: 60rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.live-bth-list {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 50rpx 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.live-bth-list .tap-item {
+  display: inline-block;
+  font-size: 40rpx;
+  color: #b4b4b4;
+  font-weight: 600;
+  margin-right: 54rpx;
+  overflow: hidden;
+}
+
+.live-bth-list .cur {
+  color: #333;
+}
+
+.gallery-list {
+  width: 100%;
+  padding-right: 94rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.gallery-list .item-box {
+  width: 100%;
+  height: 180rpx;
+  margin-bottom: 50rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-list .item-box .logo {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-list .img_box {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.gallery-list .text-box {
+  width: 100%;
+  padding-left: 220rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.gallery-list .text-box .title {
+  width: 100%;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.gallery-list .text-box .num {
+  width: 100%;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.gallery-list .text-box .video-tip {
+  margin-top: 20rpx;
+  width: 68rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 18rpx;
+  color: #fff;
+  background-color: #ea111c;
+}
+
+/* 空白页面  */
+
+.index-tips-box {
+  width: 100%;
+  padding-top: 160rpx;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.index-tips-box .bg-img {
+  width: 372rpx;
+  height: 372rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.index-tips-box .tips-text {
+  display: block;
+  width: 100%;
+  height: 116rpx;
+  line-height: 116rpx;
+  overflow: hidden;
+}
+
+.index-tips-box .bth_auth {
+  display: inline-block;
+  width: 388rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+  background: rgba(234, 17, 28, 1);
+  border-radius: 44rpx;
+  overflow: hidden;
+}
+
+/* 悬浮层  */
+
+.fixed-box {
+  width: 76rpx;
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+
+.fixed-box .bth {
+  width: 76rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 20rpx;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10rpx;
+  box-shadow: 0px 4px 40px 0px rgba(227, 227, 227, 0.5);
+  border: 1rpx solid rgba(245, 245, 245, 1);
+  overflow: hidden;
+}
+
+.fixed-box .cur {
+  color: #ea111c;
+}

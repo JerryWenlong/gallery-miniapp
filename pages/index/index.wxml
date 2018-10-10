@@ -1,0 +1,123 @@
+<!--index.wxml-->
+<view class="page">
+  <!-- header-box -->
+  <view class="header-fixed">
+    <view class='logo-box'>
+      <image class='logo' src='../../assets/icon/logo-fff.png' lazy-load="{{imgInfo.load}}" mode="{{imgInfo.mode}}"></image>
+    </view>
+    <view class='bth-list'>
+      <scroll-view class="scroll-view-tap" scroll-x style="width: 100%">
+        <view class="tap-item {{currentTab==0 ? 'cur' : ''}} History" data-current="0" bindtap="swichNav">推荐</view>
+        <view class="tap-item {{currentTab==1 ? 'cur' : ''}}" data-current="1" bindtap="swichNav">直播</view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 推荐 -->
+  <view class="content-box" wx:if="{{currentTab==0}}">
+    <!-- 扫码记录  -->
+    <view class='qrcode-box' wx:if="{{token && !!historyData}}">
+      <view class='record-box'>
+        <view class='top-box'>
+          <view class='title fl'>您曾经参加的活动</view>
+          <view class='more fr' bindtap="goMyLook">更多浏览记录</view>
+        </view>
+        <view class='album-box' bindtap="goHistoryAlbum">
+          <image class='show' src='{{historyData.coverUrl}}' lazy-load="{{imgInfo.load}}" mode="{{imgInfo.mode}}"></image>
+          <view class='oneLineOmit text'>{{historyData.headTitle}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 今日投图  -->
+    <view class="switch-box">
+      <view class="title-box">
+        <text class='title fl'>VPhoto今日投图</text>
+        <text class='more fr' bindtap="goChoicenessList">更多投图</text>
+      </view>
+      <view class="swiper-box">
+        <swiper autoplay="{{swipeInfo.autoplay}}" interval="{{swipeInfo.interval}}" duration="{{swipeInfo.duration}}" circular="{{swipeInfo.circular}}" previous-margin="{{swipeInfo.nextMargin}}" next-margin="{{swipeInfo.nextMargin}}" current="{{swipeInfo.currentItem}}"
+          bindchange="bindChange" skip-hidden-item-layout="true">
+          <block wx:for="{{todayData}}" wx:key="index">
+            <swiper-item wx:if="{{item.thumbnailUrl}}">
+              <view class="img-box" data-id="{{item.id}}" bindtap='goChoicenessDetails'>
+                <image src="{{item.thumbnailUrl}}" class="slide-image" lazy-load="{{imgInfo.load}}" mode="{{imgInfo.mode}}"></image>
+              </view>
+              <view class="content">
+                <view class="title oneLineOmit">{{item.name}}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <!-- 热门活动  -->
+    <view class="switch-box pb80">
+      <view class="title-box">
+        <text class='title fl'>VPhoto热门活动</text>
+      </view>
+      <view class='event-bth-list'>
+        <view class='event-shell'>
+          <scroll-view class="scroll-view-tap" scroll-x scroll-left="{{srcollLeftHot}}" style="width: 100%">
+            <block wx:for="{{hotListData}}" wx:key="index">
+              <view class="tap-item {{curEventTab== index ? 'cur' : ''}}" data-current="{{index}}" bindtap="swichEvent">{{item.name}}</view>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class='event-album-list'>
+        <view class='event-shell'>
+          <scroll-view class="scroll-view-tap" scroll-x style="width: 100%">
+            <block wx:for="{{hotItemData}}" wx:key="index">
+              <view class="tap-item" data-id="{{item.id}}" bindtap="goActivitiesDetails">
+                <image class='show' src='{{item.thumbnailUrl}}' lazy-load="{{imgInfo.load}}" mode="aspectFill"></image>
+                <view class='text twoLineOmit'>{{item.name}}</view>
+              </view>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class='check-more-list'>
+        <view class='bth' bindtap="goActivitiesList">查看更多{{curHotTitle}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 直播 -->
+  <view class="content-box" wx:if="{{currentTab==1}}">
+    <view class='live-box-outside'>
+      <view class='live-bth-list'>
+        <view class='event-shell'>
+          <scroll-view class="scroll-view-tap" scroll-x scroll-left="{{srcollLeftLive}}" style="width: 100%">
+            <block wx:for="{{liveListData}}" wx:key="index" wx:if="{{item.isRemark}}">
+              <view class="tap-item {{curLiveTab == index ? 'cur' : ''}}" data-current="{{index}}" bindtap="swichLiveType">{{item.name}}</view>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="gallery-list" wx:if="{{albumList.length > 0}}">
+        <block wx:for="{{albumList}}" wx:key="index">
+          <view class='item-box' data-wechatid="{{item.wechatMd5}}" bindtap="goCurrentAlbum">
+            <view class='img_box'> 
+              <image class='logo' src='{{item.coverUrl}}' lazy-load="{{imgInfo.load}}" mode="{{imgInfo.mode}}"></image>
+            </view>
+            <view class='text-box yCenter'>
+              <text class='title twoLineOmit'>{{item.headTitle}}</text>
+              <text class='num'>{{item.albumCategory==1?'直播图片':'直播视频'}} {{item.photoCount}}</text>
+              <view class='video-tip' wx:if="{{item.albumCategory==2}}">视频</view>
+            </view>
+          </view>
+        </block>        
+      </view>
+      <!-- 空白页面 -->
+      <view class="index-tips-box" wx:else>
+        <block>
+          <image src='{{localSrc.noList}}' mode="{{imgInfo.mode}}" class='bg-img'></image>
+          <text class='tips-text'>空空如也~</text>
+        </block>
+      </view>
+    </view>
+    <!-- 悬浮层  -->
+    <view class='fixed-box' wx:if="{{temporaryClose}}">
+      <view class="bth {{fixedState == 0? 'cur' : ''}}" data-current="0" bindtap="swichGallerySort">最新</view>
+      <view class="bth {{fixedState == 1? 'cur' : ''}}" data-current="1" bindtap="swichGallerySort">最热</view>
+    </view>
+  </view>
+</view>

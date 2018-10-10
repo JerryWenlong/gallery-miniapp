@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/album/videoDetail",
+    "pages/cover/cover",
+    "pages/test/test",
+    "pages/tag/tag",
+    "pages/logs/logs",
+    "pages/me/me",
+    "pages/order/order",
+    "pages/myShoot/myShoot",
+    "pages/subscribing/subscribing",
+    "pages/album/album",
+    "pages/myLook/myLook",
+    "pages/details/details",
+    "pages/picShare/picShare",
+    "pages/myLike/myLike",
+    "pages/myMaking/myMaking",
+    "pages/myMaking/single",
+    "pages/login/login",
+    "pages/merge/merge",
+    "pages/merge/making",
+    "pages/choiceness/index",
+    "pages/choiceness/details",
+    "pages/activities/index",
+    "pages/activities/details",
+    "pages/submitSuccess/submitSuccess",
+    "pages/findFace/findFace",
+    "pages/findFace/findSuccess"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#EDECE8",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "VPhoto云摄影",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "position": "bottom",
+    "color": "#333",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "selectedColor": "#EA111C",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/icon/index-gray.png",
+        "selectedIconPath": "assets/icon/index-red.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "体验一下",
+        "iconPath": "assets/icon/file-gray.png",
+        "selectedIconPath": "assets/icon/file-red.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "个人",
+        "iconPath": "assets/icon/me-gray.png",
+        "selectedIconPath": "assets/icon/me-red.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 30000,
+    "downloadFile": 30000
+  },
+  "debug": false
+}
